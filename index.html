@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Quail Eggs – Tryon, NC</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Georgia, 'Times New Roman', serif; background: #f7f3ec; color: #2c2c2a; min-height: 100vh; }
+
+  header {
+    background: #27500A;
+    padding: 1rem 1.5rem;
+    text-align: center;
+  }
+  header h1 { color: #EAF3DE; font-size: 2rem; font-weight: normal; letter-spacing: 0.05em; }
+  header p { color: #9FE1CB; font-size: 0.95rem; margin-top: 0.3rem; }
+
+  .hero {
+    background: linear-gradient(160deg, #e8f5e1 0%, #f0f9f4 100%);
+    text-align: center;
+    padding: 2.5rem 1.5rem 2rem;
+    border-bottom: 1px solid #c0dd97;
+  }
+  .hero svg { display: block; margin: 0 auto 1rem; }
+
+  .eggs-row {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 1.5rem;
+  }
+  .egg {
+    width: 34px; height: 44px;
+    background: #f5ead6;
+    border: 1px solid #d4b896;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    position: relative; overflow: hidden;
+  }
+  .egg::after {
+    content: '';
+    position: absolute; top: 18%; left: 18%;
+    width: 30%; height: 22%;
+    background: rgba(255,255,255,0.5);
+    border-radius: 50%;
+    transform: rotate(-30deg);
+  }
+  .egg.s1::before { content:''; position:absolute; top:30%; left:55%; width:8px; height:6px; background:#8B6914; border-radius:50%; opacity:0.5; }
+  .egg.s2::before { content:''; position:absolute; top:50%; left:25%; width:6px; height:5px; background:#5C4A1E; border-radius:50%; opacity:0.4; }
+
+  #avail-badge {
+    display: inline-block;
+    padding: 5px 18px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-family: Arial, sans-serif;
+    margin-bottom: 1rem;
+    letter-spacing: 0.03em;
+  }
+  .badge-yes { background: #3B6D11; color: #EAF3DE; }
+  .badge-no  { background: #5F5E5A; color: #F1EFE8; }
+
+  .hero-title { font-size: 2.4rem; color: #27500A; margin-bottom: 0.3rem; }
+  .hero-sub   { font-size: 1rem; color: #3B6D11; font-family: Arial, sans-serif; }
+
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    max-width: 560px;
+    margin: 1.5rem auto 0;
+    padding: 0 1rem;
+  }
+  .card {
+    background: #fff;
+    border: 1px solid #c0dd97;
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+  }
+  .card-label { font-size: 0.72rem; color: #888; text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 5px; font-family: Arial, sans-serif; }
+  .card-value { font-size: 1.3rem; color: #27500A; }
+  .card-sub   { font-size: 0.82rem; color: #888; margin-top: 3px; font-family: Arial, sans-serif; }
+
+  .contact {
+    max-width: 560px;
+    margin: 1.5rem auto 2.5rem;
+    padding: 0 1rem;
+  }
+  .contact-card {
+    background: #fff;
+    border: 1px solid #c0dd97;
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+  }
+  .contact-card h2 { font-size: 1rem; color: #3B6D11; margin-bottom: 0.75rem; font-family: Arial, sans-serif; font-weight: 600; letter-spacing: 0.04em; }
+  .contact-row { display: flex; align-items: flex-start; gap: 10px; padding: 7px 0; font-size: 0.95rem; border-bottom: 1px solid #eee; font-family: Arial, sans-serif; }
+  .contact-row:last-child { border-bottom: none; }
+  .cicon { font-size: 1.1rem; color: #3B6D11; min-width: 22px; margin-top: 1px; }
+
+  footer { text-align: center; padding: 1.5rem; font-size: 0.8rem; color: #888; font-family: Arial, sans-serif; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Quail Eggs</h1>
+  <p>Fresh farm-raised quail eggs — Tryon, NC</p>
+</header>
+
+<div class="hero">
+  <!-- Quail SVG illustration -->
+  <svg width="110" height="90" viewBox="0 0 110 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="62" cy="58" rx="28" ry="20" fill="#8B6914" opacity="0.85"/>
+    <circle cx="38" cy="44" r="13" fill="#6B4F12"/>
+    <ellipse cx="38" cy="52" rx="7" ry="4" fill="#5C4010"/>
+    <path d="M38 31 Q40 18 44 14" stroke="#4a3010" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+    <circle cx="44" cy="13" r="3" fill="#4a3010"/>
+    <circle cx="34" cy="41" r="2.5" fill="#fff" opacity="0.9"/>
+    <circle cx="34.8" cy="41.3" r="1" fill="#1a0a00"/>
+    <path d="M32 46 Q28 54 22 60" stroke="#6B4F12" stroke-width="4" stroke-linecap="round"/>
+    <path d="M42 46 Q46 54 52 60" stroke="#6B4F12" stroke-width="4" stroke-linecap="round"/>
+    <path d="M55 70 Q58 80 54 86" stroke="#8B6914" stroke-width="3" stroke-linecap="round"/>
+    <path d="M70 72 Q73 82 70 87" stroke="#8B6914" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="66" cy="52" r="3" fill="#5C4010" opacity="0.5"/>
+    <circle cx="76" cy="55" r="2.5" fill="#5C4010" opacity="0.4"/>
+  </svg>
+
+  <div class="eggs-row">
+    <div class="egg s1"></div>
+    <div class="egg s2"></div>
+    <div class="egg"></div>
+    <div class="egg s1"></div>
+    <div class="egg s2"></div>
+  </div>
+
+  <!-- Badge and count injected by server via template -->
+  <div id="avail-badge" class="{{ badge_class }}">{{ badge_text }}</div>
+  <h1 class="hero-title">Quail Eggs</h1>
+  <p class="hero-sub">Farm fresh &bull; Naturally raised</p>
+
+  <div class="cards">
+    <div class="card">
+      <div class="card-label">Price</div>
+      <div class="card-value">$5.00</div>
+      <div class="card-sub">per dozen</div>
+    </div>
+    {% if available %}
+    <div class="card">
+      <div class="card-label">Available</div>
+      <div class="card-value">{{ dozens }} dozen</div>
+      <div class="card-sub">ready today</div>
+    </div>
+    {% endif %}
+  </div>
+</div>
+
+<div class="contact">
+  <div class="contact-card">
+    <h2>How to order</h2>
+    <div class="contact-row">
+      <span class="cicon">📍</span>
+      <div>2009 Moore Rd<br>Tryon, NC 28782</div>
+    </div>
+    <div class="contact-row">
+      <span class="cicon">💬</span>
+      <div>Text to order: <strong>(864) 415-9198</strong></div>
+    </div>
+  </div>
+</div>
+
+<footer>eggs.papalanc.com &bull; Tryon, NC</footer>
+
+</body>
+</html>
