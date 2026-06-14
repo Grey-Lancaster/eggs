@@ -1,0 +1,349 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Quail Eggs – Tryon, NC</title>
+
+<style>
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    background: #f8f4eb;
+    color: #24351f;
+    min-height: 100vh;
+  }
+
+  .page {
+    max-width: 1100px;
+    margin: 0 auto;
+    background: #fffaf0;
+    box-shadow: 0 0 35px rgba(0,0,0,0.08);
+  }
+
+  header {
+    background:
+      radial-gradient(circle at top, rgba(255,255,255,0.08), transparent 35%),
+      #183718;
+    padding: 1.1rem 1.5rem 1.3rem;
+    text-align: center;
+    color: #f6eedc;
+  }
+
+  header h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2.2rem, 7vw, 4.8rem);
+    font-weight: normal;
+    line-height: 1;
+    letter-spacing: 0.04em;
+  }
+
+  header p {
+    margin-top: 0.55rem;
+    color: #f3e8cd;
+    font-size: clamp(0.95rem, 2vw, 1.25rem);
+  }
+
+  .hero {
+    position: relative;
+    overflow: hidden;
+    min-height: 430px;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 1.5rem;
+    background:
+      radial-gradient(circle at left center, rgba(226, 219, 183, 0.45), transparent 45%),
+      linear-gradient(135deg, #fffaf0 0%, #f3eedf 100%);
+    border-bottom: 1px solid #d8c897;
+  }
+
+  .hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+  }
+
+  .hero-image img {
+    width: min(100%, 430px);
+    max-height: 360px;
+    object-fit: contain;
+    display: block;
+  }
+
+  .hero-text {
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .hero-title {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(3rem, 7vw, 5.2rem);
+    color: #183718;
+    font-weight: normal;
+    line-height: 0.95;
+    margin-bottom: 1rem;
+  }
+
+  .divider {
+    width: min(360px, 80%);
+    height: 1px;
+    background: #b9a56f;
+    margin: 0 auto 1rem;
+    position: relative;
+  }
+
+  .divider::after {
+    content: "❦";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -55%);
+    background: #fffaf0;
+    padding: 0 14px;
+    color: #9c8751;
+    font-size: 1.4rem;
+  }
+
+  .hero-sub {
+    font-size: 1.35rem;
+    color: #6d5739;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    padding: 2.2rem 2rem 1.2rem;
+    background: #fffaf0;
+  }
+
+  .card {
+    background: #fffdf7;
+    border: 1px solid #d9c88e;
+    border-radius: 18px;
+    padding: 1.8rem 1.4rem;
+    text-align: center;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+  }
+
+  .icon-circle {
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 0.85rem;
+    border-radius: 50%;
+    background: #e5e4c9;
+    display: grid;
+    place-items: center;
+    font-size: 2rem;
+  }
+
+  .card-label {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.55rem;
+    color: #39512d;
+    margin-bottom: 0.4rem;
+  }
+
+  .card-value {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(3rem, 7vw, 4.4rem);
+    color: #183718;
+    line-height: 1;
+  }
+
+  .card-sub {
+    margin-top: 0.65rem;
+    font-size: 1.25rem;
+    color: #7a6547;
+  }
+
+  .contact {
+    padding: 1.2rem 2rem 2rem;
+    background: #fffaf0;
+  }
+
+  .contact-card {
+    position: relative;
+    overflow: hidden;
+    background: #f4f3df;
+    border: 1px solid #cfc28e;
+    border-radius: 18px;
+    padding: 1.8rem;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.06);
+  }
+
+  .contact-card::after {
+    content: "✽";
+    position: absolute;
+    right: 2rem;
+    top: 1.2rem;
+    font-size: 9rem;
+    color: rgba(78, 98, 55, 0.15);
+    transform: rotate(-15deg);
+  }
+
+  .contact-card h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    text-align: center;
+    color: #183718;
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    font-weight: normal;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .contact-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    max-width: 620px;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(80,80,60,0.18);
+    position: relative;
+    z-index: 2;
+  }
+
+  .contact-row:last-child {
+    border-bottom: none;
+  }
+
+  .cicon {
+    width: 54px;
+    height: 54px;
+    min-width: 54px;
+    border-radius: 50%;
+    background: #183718;
+    color: #fff8e8;
+    display: grid;
+    place-items: center;
+    font-size: 1.5rem;
+  }
+
+  .contact-row div {
+    font-size: 1.15rem;
+    line-height: 1.35;
+    color: #263220;
+  }
+
+  footer {
+    background: #183718;
+    color: #f6eedc;
+    text-align: center;
+    padding: 1.4rem;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.03em;
+  }
+
+  @media (max-width: 760px) {
+    .hero {
+      min-height: auto;
+      grid-template-columns: 1fr;
+      padding: 1.5rem 1rem 2rem;
+    }
+
+    .hero-image img {
+      width: min(100%, 330px);
+      max-height: 300px;
+    }
+
+    .hero-text {
+      padding: 0.5rem;
+    }
+
+    .cards {
+      grid-template-columns: 1fr;
+      padding: 1.4rem;
+      gap: 18px;
+    }
+
+    .contact {
+      padding: 1rem 1.4rem 1.6rem;
+    }
+
+    .contact-card {
+      padding: 1.3rem;
+    }
+
+    .contact-card::after {
+      display: none;
+    }
+  }
+</style>
+</head>
+
+<body>
+<div class="page">
+
+  <header>
+    <h1>Quail Eggs</h1>
+    <p>Fresh farm-raised quail eggs — Tryon, NC</p>
+  </header>
+
+  <section class="hero">
+    <div class="hero-image">
+      <img src="/static/quail-eggs-hero.png" alt="Quail with speckled eggs">
+    </div>
+
+    <div class="hero-text">
+      <h1 class="hero-title">Quail Eggs</h1>
+      <div class="divider"></div>
+      <p class="hero-sub">Farm fresh &bull; Naturally raised</p>
+    </div>
+  </section>
+
+  <section class="cards">
+    <div class="card">
+      <div class="icon-circle">🏷️</div>
+      <div class="card-label">Price</div>
+      <div class="card-value">$5.00</div>
+      <div class="card-sub">per dozen</div>
+    </div>
+
+    
+    <div class="card">
+      <div class="icon-circle">🧺</div>
+      <div class="card-label">Available</div>
+      <div class="card-value">3 dozen</div>
+      <div class="card-sub">ready today</div>
+    </div>
+    
+  </section>
+
+  <section class="contact">
+    <div class="contact-card">
+      <h2>How to order</h2>
+
+      <div class="contact-row">
+        <span class="cicon">📍</span>
+        <div>
+          2009 Moore Rd<br>
+          Tryon, NC 28782
+        </div>
+      </div>
+
+      <div class="contact-row">
+        <span class="cicon">💬</span>
+        <div>
+          Text to order: <strong>(864) 415-9198</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    eggs.papalanc.com &bull; Tryon, NC
+  </footer>
+
+</div>
+</body>
+</html>
