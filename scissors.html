@@ -1,12 +1,10 @@
-﻿
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
- <title>Quail Eggs – Moore Rd, near TIEC</title>
+<title>Quail Egg Scissors – Moore Rd, near TIEC</title>
 
 <style>
   *, *::before, *::after {
@@ -52,119 +50,67 @@
     font-size: clamp(0.95rem, 2vw, 1.25rem);
   }
 
-  .hero {
-    position: relative;
-    overflow: hidden;
-    min-height: 430px;
-    padding: 2rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    gap: 1.5rem;
-    background:
-      radial-gradient(circle at left center, rgba(226, 219, 183, 0.45), transparent 45%),
-      linear-gradient(135deg, #fffaf0 0%, #f3eedf 100%);
-    border-bottom: 1px solid #d8c897;
+  .back-link {
+    display: block;
+    text-align: center;
+    padding: 1rem 2rem 0;
   }
 
-  .hero-image {
+  .back-link a {
+    color: #4e6237;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+
+  .back-link a:hover {
+    text-decoration: underline;
+  }
+
+  .product {
+    padding: 1.5rem 2rem 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  .product-icon {
     display: flex;
     justify-content: center;
-    align-items: end;
+    align-items: center;
   }
 
-  .hero-image img {
-    width: min(100%, 430px);
-    max-height: 360px;
-    object-fit: contain;
-    display: block;
-  }
-
-  .hero-text {
-    text-align: center;
-    padding: 1rem;
-  }
-
-  .hero-title {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(3rem, 7vw, 5.2rem);
-    color: #183718;
-    font-weight: normal;
-    line-height: 0.95;
-    margin-bottom: 1rem;
-  }
-
-  .divider {
-    width: min(360px, 80%);
-    height: 1px;
-    background: #b9a56f;
-    margin: 0 auto 1rem;
-    position: relative;
-  }
-
-  .divider::after {
-    content: "❦";
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -55%);
-    background: #fffaf0;
-    padding: 0 14px;
-    color: #9c8751;
-    font-size: 1.4rem;
-  }
-
-  .hero-sub {
-    font-size: 1.35rem;
-    color: #6d5739;
-  }
-
-  .cards {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 28px;
-    padding: 2.2rem 2rem 1.2rem;
-    background: #fffaf0;
-  }
-
-  .card {
-    background: #fffdf7;
-    border: 1px solid #d9c88e;
-    border-radius: 18px;
-    padding: 1.8rem 1.4rem;
-    text-align: center;
-    box-shadow: 0 8px 18px rgba(0,0,0,0.08);
-  }
-
-  .icon-circle {
-    width: 72px;
-    height: 72px;
-    margin: 0 auto 0.85rem;
+  .product-icon .icon-circle {
+    width: 220px;
+    height: 220px;
     border-radius: 50%;
     background: #e5e4c9;
     display: grid;
     place-items: center;
-    font-size: 2rem;
+    font-size: 7rem;
   }
 
-  .card-label {
+  .product-text .hero-title {
     font-family: Georgia, "Times New Roman", serif;
-    font-size: 1.55rem;
-    color: #39512d;
-    margin-bottom: 0.4rem;
-  }
-
-  .card-value {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(3rem, 7vw, 4.4rem);
+    font-size: clamp(2.4rem, 6vw, 3.6rem);
     color: #183718;
-    line-height: 1;
+    font-weight: normal;
+    line-height: 1.05;
+    margin-bottom: 0.6rem;
   }
 
-  .card-sub {
-    margin-top: 0.65rem;
-    font-size: 1.25rem;
-    color: #7a6547;
+  .product-text .price {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 2rem;
+    color: #39512d;
+    margin-bottom: 1rem;
+  }
+
+  .product-text p {
+    font-size: 1.1rem;
+    line-height: 1.55;
+    color: #3a3325;
+    margin-bottom: 0.9rem;
   }
 
   .contact {
@@ -256,25 +202,16 @@
   }
 
   @media (max-width: 760px) {
-    .hero {
-      min-height: auto;
-      grid-template-columns: 1fr;
-      padding: 1.5rem 1rem 2rem;
-    }
-
-    .hero-image img {
-      width: min(100%, 330px);
-      max-height: 300px;
-    }
-
-    .hero-text {
-      padding: 0.5rem;
-    }
-
-    .cards {
+    .product {
       grid-template-columns: 1fr;
       padding: 1.4rem;
-      gap: 18px;
+      text-align: center;
+    }
+
+    .product-icon .icon-circle {
+      width: 160px;
+      height: 160px;
+      font-size: 5rem;
     }
 
     .contact {
@@ -296,53 +233,39 @@
 <div class="page">
 
   <header>
-    <h1>Quail Eggs</h1>
-    <p>Fresh farm-raised quail eggs — Moore Rd, near TIEC</p>
+    <h1>Quail Egg Scissors</h1>
+    <p>The easy way to crack a quail egg</p>
   </header>
 
-  <section class="hero">
-    <div class="hero-image">
-      <img src="/static/quail-eggs-hero.png" alt="Quail with speckled eggs">
+  <div class="back-link">
+    <a href="index.html">&larr; Back to Quail Eggs</a>
+  </div>
+
+  <section class="product">
+    <div class="product-icon">
+      <div class="icon-circle">✂️</div>
     </div>
 
-    <div class="hero-text">
-      <h1 class="hero-title">Quail Eggs</h1>
-      <div class="divider"></div>
-      <p class="hero-sub">Farm fresh &bull; Naturally raised</p>
+    <div class="product-text">
+      <div class="hero-title">Quail Egg Scissors</div>
+      <div class="price">$4.00</div>
+      <p>
+        Quail egg shells are thin but surprisingly tough, and their small
+        size makes them tricky to crack cleanly with a regular knife or
+        by hand. These small, sharp-tipped scissors snip off just the top
+        of the shell in one clean cut, so the egg stays intact underneath.
+      </p>
+      <p>
+        Great for deviled quail eggs, garnishes, snacking, or any recipe
+        where you want a neat, uncracked white and yolk. Compact enough
+        to keep in a kitchen drawer and easy to hold and control.
+      </p>
     </div>
-  </section>
-
-  <section class="cards">
-    <div class="card">
-      <div class="icon-circle">🏷️</div>
-      <div class="card-label">Price</div>
-      <div class="card-value">$5.00</div>
-      <div class="card-sub">per dozen</div>
-    </div>
-
-    
-    <div class="card">
-      <div class="icon-circle">🧺</div>
-      <div class="card-label">Available</div>
-      <div class="card-value">2 dozen</div>
-      <div class="card-sub">ready today</div>
-    </div>
-    
   </section>
 
   <section class="contact">
     <div class="contact-card">
-      <h2>Ordering Info</h2>
-
-      <div class="contact-row">
-        <span class="cicon">📍</span>
-        <div>
-          <a href="https://maps.google.com/?q=2009+Moore+Rd,+Tryon,+NC+28782" target="_blank" rel="noopener noreferrer">
-            2009 Moore Rd<br>
-            Tryon, NC 28782
-          </a>
-        </div>
-      </div>
+      <h2>Get a Pair</h2>
 
       <div class="contact-row">
         <span class="cicon">💬</span>
@@ -352,9 +275,12 @@
       </div>
 
       <div class="contact-row">
-        <span class="cicon">✂️</span>
+        <span class="cicon">📍</span>
         <div>
-          <a href="scissors.html">Quail Egg Scissors &rarr;</a>
+          <a href="https://maps.google.com/?q=2009+Moore+Rd,+Tryon,+NC+28782" target="_blank" rel="noopener noreferrer">
+            2009 Moore Rd<br>
+            Tryon, NC 28782
+          </a>
         </div>
       </div>
     </div>
@@ -367,5 +293,3 @@
 </div>
 </body>
 </html>
-
-
