@@ -177,10 +177,29 @@
   }
 
   .bulk-price {
-    margin-top: 0.5rem;
-    font-size: 1.05rem;
+    margin-top: 0.7rem;
+  }
+
+  .bulk-badge {
+    display: inline-block;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 0.8rem;
+    font-style: italic;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #fff8e8;
+    background: #a8391f;
+    padding: 0.2rem 0.75rem;
+    border-radius: 999px;
+    margin-bottom: 0.4rem;
+  }
+
+  .bulk-amount {
+    display: block;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.5rem;
     font-weight: bold;
-    color: #39512d;
+    color: #183718;
   }
 
   .contact {
@@ -353,14 +372,14 @@
       <div class="card-label">Price</div>
       <div class="card-value">$5.00</div>
       <div class="card-sub">per dozen</div>
-      <!-- BULK_PRICE_START --><div class="card-sub bulk-price">5 dozen: $20.00</div><!-- BULK_PRICE_END -->
+      <!-- BULK_PRICE_START --><div class="bulk-price"><span class="bulk-badge">Special</span><span class="bulk-amount">5 dozen $20.00</span></div><!-- BULK_PRICE_END -->
     </div>
 
     
     <div class="card">
       <div class="icon-circle">🧺</div>
       <div class="card-label">Available</div>
-      <div class="card-value">7 dozen</div>
+      <div class="card-value">6 dozen</div>
       <div class="card-sub">ready today</div>
     </div>
     
