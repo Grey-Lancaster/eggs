@@ -280,6 +280,14 @@
     text-decoration: underline;
   }
 
+  .directions-hint {
+    display: block;
+    margin-top: 0.2rem;
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: #9c8751;
+  }
+
   .payment-row {
     text-align: center;
     padding-top: 1rem;
@@ -290,13 +298,18 @@
   }
 
   .payment-row a {
-    color: inherit;
+    display: inline-block;
+    color: #fff8e8;
+    background: #183718;
     text-decoration: none;
     font-weight: bold;
+    padding: 0.7rem 1.8rem;
+    border-radius: 999px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.18);
   }
 
   .payment-row a:hover {
-    text-decoration: underline;
+    background: #234a23;
   }
 
   footer {
@@ -395,6 +408,7 @@
           <a href="https://maps.google.com/?q=2009+Moore+Rd,+Tryon,+NC+28782" target="_blank" rel="noopener noreferrer">
             2009 Moore Rd<br>
             Tryon, NC 28782
+            <span class="directions-hint">Tap for directions &rarr;</span>
           </a>
         </div>
       </div>
