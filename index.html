@@ -415,7 +415,7 @@
       <div class="contact-row">
         <span class="cicon">📍</span>
         <div>
-          <a href="https://maps.google.com/?q=2009+Moore+Rd,+Tryon,+NC+28782" target="_blank" rel="noopener noreferrer">
+          <a href="https://maps.google.com/?q=2009+Moore+Rd,+Tryon,+NC+28782" target="_blank" rel="noopener noreferrer" onclick="window.eggPing && eggPing('/directions-click')">
             2009 Moore Rd<br>
             Tryon, NC 28782
             <span class="directions-hint">Tap for directions &rarr;</span>
@@ -426,19 +426,19 @@
       <div class="contact-row">
         <span class="cicon">💬</span>
         <div>
-          Text to order: <a href="sms:+18644159198"><strong>(864) 415-9198</strong></a>
+          Text to order: <a href="sms:+18644159198" onclick="window.eggPing && eggPing('/text-click')"><strong>(864) 415-9198</strong></a>
         </div>
       </div>
 
       <div class="contact-row">
         <span class="cicon">✂️</span>
         <div>
-          <a href="scissors.html">Quail Egg Scissors &rarr;</a>
+          <a href="scissors.html" onclick="window.eggPing && eggPing('/scissors-click')">Quail Egg Scissors &rarr;</a>
         </div>
       </div>
 
       <div class="payment-row">
-        <a href="cash.html">Payment Options</a>
+        <a href="cash.html" onclick="window.eggPing && eggPing('/payment-click')">Payment Options</a>
       </div>
     </div>
   </section>
@@ -450,10 +450,13 @@
 </div>
 <script>
 (function(){
-  var url = 'https://script.google.com/macros/s/AKfycbzMoxxEHagnhBDs9o02Ilu_KKYs4O70ikjcXEpaH8sftm52BOBnGWV63MDzEV-WrJ9X/exec?path=' + encodeURIComponent(location.pathname) + '&ref=' + encodeURIComponent(document.referrer || '') + '&t=' + Date.now();
-  if (navigator.sendBeacon) {
-    navigator.sendBeacon(url);
+  var base = 'https://script.google.com/macros/s/AKfycbzMoxxEHagnhBDs9o02Ilu_KKYs4O70ikjcXEpaH8sftm52BOBnGWV63MDzEV-WrJ9X/exec';
+  function ping(path){
+    if (!navigator.sendBeacon) return;
+    navigator.sendBeacon(base + '?path=' + encodeURIComponent(path) + '&ref=' + encodeURIComponent(document.referrer || '') + '&t=' + Date.now());
   }
+  window.eggPing = ping;
+  ping(location.pathname);
 })();
 </script>
 </body>
