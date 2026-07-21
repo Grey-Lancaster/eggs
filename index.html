@@ -426,8 +426,10 @@
 </div>
 <script>
 (function(){
-  var i = new Image();
-  i.src = 'https://script.google.com/macros/s/AKfycbzMoxxEHagnhBDs9o02Ilu_KKYs4O70ikjcXEpaH8sftm52BOBnGWV63MDzEV-WrJ9X/exec?path=' + encodeURIComponent(location.pathname) + '&ref=' + encodeURIComponent(document.referrer || '') + '&t=' + Date.now();
+  var url = 'https://script.google.com/macros/s/AKfycbzMoxxEHagnhBDs9o02Ilu_KKYs4O70ikjcXEpaH8sftm52BOBnGWV63MDzEV-WrJ9X/exec?path=' + encodeURIComponent(location.pathname) + '&ref=' + encodeURIComponent(document.referrer || '') + '&t=' + Date.now();
+  if (navigator.sendBeacon) {
+    navigator.sendBeacon(url);
+  }
 })();
 </script>
 </body>
