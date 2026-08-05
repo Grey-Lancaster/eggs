@@ -297,10 +297,17 @@
 </div>
 <script>
 (function(){
-  var url = 'https://script.google.com/macros/s/AKfycbzMoxxEHagnhBDs9o02Ilu_KKYs4O70ikjcXEpaH8sftm52BOBnGWV63MDzEV-WrJ9X/exec?path=' + encodeURIComponent(location.pathname) + '&ref=' + encodeURIComponent(document.referrer || '') + '&t=' + Date.now();
-  if (navigator.sendBeacon) {
-    navigator.sendBeacon(url);
+  var base = 'https://script.google.com/macros/s/AKfycbzMoxxEHagnhBDs9o02Ilu_KKYs4O70ikjcXEpaH8sftm52BOBnGWV63MDzEV-WrJ9X/exec';
+  var loc = '';
+  function ping(path){
+    if (!navigator.sendBeacon) return;
+    navigator.sendBeacon(base + '?path=' + encodeURIComponent(path) + '&ref=' + encodeURIComponent(document.referrer || '') + '&loc=' + encodeURIComponent(loc) + '&t=' + Date.now());
   }
+  fetch('https://get.geojs.io/v1/ip/geo.json')
+    .then(function(r){ return r.json(); })
+    .then(function(d){ loc = [d.city, d.region, d.country].filter(Boolean).join(', '); })
+    .catch(function(){})
+    .then(function(){ ping(location.pathname); });
 })();
 </script>
 </body>
